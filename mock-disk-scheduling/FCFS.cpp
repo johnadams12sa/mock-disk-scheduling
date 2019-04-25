@@ -6,8 +6,9 @@
 
 using namespace std;
 const int size_of_cylinders = 5000;
-int get_disk_init_pos(int disk_init_pos, bool input_flag)
+int get_disk_init_pos(int disk_init_pos)
 {
+    bool input_flag = false;
     //ask user for input for initial position of disk-head to start servicing requests
     cerr << "Enter a starting disk-head placement " << endl;
     cin >> disk_init_pos;
@@ -20,10 +21,13 @@ int get_disk_init_pos(int disk_init_pos, bool input_flag)
             cin.clear();
             cin.ignore(1000, '\n');
             //exit(1);
+            cin >> disk_init_pos;
         }
         else
+        {
             input_flag = false;
-        cin >> disk_init_pos;
+            cerr << "Input accepted" << endl;
+        }
     }
     return disk_init_pos;
 }
@@ -35,7 +39,7 @@ int main(int argc, char *argv[])
     int disk_init_pos, disk_pos, overhead_work = 0;
     bool input_flag = false;
     //function to get user input on disk head initial position
-    disk_pos = get_disk_init_pos(disk_init_pos, input_flag);
+    disk_pos = get_disk_init_pos(disk_init_pos);
 
     //populate queue with 50 randomly generated requests (use random number generator to get
     //service request numbers)
