@@ -1,0 +1,14 @@
+{
+  "name": "Ron-Bot",
+  "version": "1.0.0",
+  "description": "Ronnie-Boy",
+  "main": "bot.js",
+  "author": "Ron",
+  "dependencies": {
+    "-": "0.0.1",
+    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+    "node": "^14.3.0",
+    "save": "^2.4.0",
+    "winston": "^3.2.1"
+  }
+}
